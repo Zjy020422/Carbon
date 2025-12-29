@@ -1,0 +1,21 @@
+# ContrailTracker Website Backend Requirements
+
+# Web Framework
+Flask==3.0.0
+flask-cors==4.0.0
+
+# Data Processing
+pandas==2.1.4
+numpy==1.24.3
+
+# File Handling
+Werkzeug==3.0.1
+
+# Scientific Computing
+pyproj==3.6.1
+
+# Optional: Production Server
+gunicorn==21.2.0
+
+# Optional: Environment Management
+python-dotenv==1.0.0

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrailSyncPioneers - Fly Cleaner. Spend Smarter.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" alt="TrailSyncPioneers Logo" class="logo">
+                    <span class="company-name">TrailSyncPioneers</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#business">Business Model</a></li>
+                    <li><a href="#market">Market</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#research">Research</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-bg-image active" style="background-image: url('images/background1.jpg');"></div>
+            <div class="hero-bg-image" style="background-image: url('images/background2.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="images/logo.jpg" alt="TrailSyncPioneers Logo">
+                </div>
+                <h1 class="hero-title">Fly Cleaner. Spend Smarter.</h1>
+                <p class="hero-subtitle">AI-Driven Carbon Management Platform for Aviation's Net-Zero Future</p>
+                <p class="hero-description">TrailSyncPioneers empowers airlines to monitor, manage, and reduce contrail emissions through cutting-edge AI technology and comprehensive data integration.</p>
+                <div class="cta-buttons">
+                    <a href="#business" class="btn btn-primary">Learn More</a>
+                    <a href="#team" class="btn btn-secondary">Meet Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Understanding Contrail Formation</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Challenge</h3>
+                    <ul class="challenge-list">
+                        <li>
+                            <strong>Overlooked Climate Impact:</strong> Aviation contrails represent a significant yet often overlooked contributor to climate change, with warming effects that rival aviation CO2 emissions.
+                        </li>
+                        <li>
+                            <strong>Complex Detection:</strong> Traditional monitoring methods struggle to accurately detect and track contrail formation across vast airspace networks.
+                        </li>
+                        <li>
+                            <strong>Data Fragmentation:</strong> Critical information from satellite imagery, flight data, and carbon markets remains siloed, preventing comprehensive analysis.
+                        </li>
+                        <li>
+                            <strong>Economic Trade-offs:</strong> Airlines face difficult decisions balancing environmental responsibility with operational efficiency and cost management.
+                        </li>
+                    </ul>
+                    <h3>Our Solution</h3>
+                    <ul class="solution-list">
+                        <li>
+                            <strong>AI-Powered Detection:</strong> Custom U-Net deep learning model delivers precise contrail identification from satellite imagery with superior accuracy.
+                        </li>
+                        <li>
+                            <strong>Multi-Source Integration:</strong> Seamlessly combines satellite data, ADS-B flight tracking, and carbon market information into a unified platform.
+                        </li>
+                        <li>
+                            <strong>Predictive Analytics:</strong> Advanced algorithms forecast contrail formation risks, enabling proactive route optimization and flight planning.
+                        </li>
+                        <li>
+                            <strong>Data-Driven Decisions:</strong> Transforms complex environmental data into actionable insights that reduce climate impact while optimizing operational costs.
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="images/background.jpg" alt="Contrail Formation Principle">
+                    <p class="image-caption">Contrail Formation Mechanism</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section id="business" class="business-model">
+        <div class="container">
+            <h2 class="section-title">Business Model</h2>
+
+            <!-- Tab Navigation -->
+            <div class="business-tabs">
+                <button class="tab-button active" data-tab="revenue">Revenue Streams</button>
+                <button class="tab-button" data-tab="customers">Target Customers</button>
+                <button class="tab-button" data-tab="services">Service Offerings</button>
+                <button class="tab-button" data-tab="costs">Cost Structure</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content-wrapper">
+                <!-- Revenue Streams Tab -->
+                <div class="tab-content active" id="revenue">
+                    <div class="business-grid-single">
+                        <div class="business-card-large">
+                            <div class="business-item">
+                                <h4>SaaS Subscription</h4>
+                                <p>Tiered pricing for airlines based on fleet size, route coverage, and data query capacity. Annual or monthly billing options available.</p>
+                                <span class="price-tag">50,000 - 200,000 CNY/year</span>
+                            </div>
+                            <div class="business-item">
+                                <h4>Professional Consulting</h4>
+                                <p>In-depth emission reduction path planning and customized development services tailored to airline needs.</p>
+                            </div>
+                            <div class="business-item">
+                                <h4>API Data Access</h4>
+                                <p>Pay-per-use data access for government bodies, aviation regulatory agencies, and carbon exchanges.</p>
+                            </div>
+                            <div class="business-item">
+                                <h4>Custom Analysis Reports</h4>
+                                <p>Specialized reports designed for regulatory institutions and carbon market participants.</p>
+                                <span class="price-tag">20,000 - 50,000 CNY/report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Target Customers Tab -->
+                <div class="tab-content" id="customers">
+                    <div class="business-grid-double">
+                        <div class="business-card-large">
+                            <h4>Primary Clients</h4>
+                            <ul class="customer-list">
+                                <li>
+                                    <strong>Commercial Airlines:</strong> Major carriers seeking to reduce contrail emissions and optimize flight operations for sustainability.
+                                </li>
+                                <li>
+                                    <strong>Regional Carriers:</strong> Smaller airlines looking for cost-effective carbon management solutions.
+                                </li>
+                                <li>
+                                    <strong>Cargo Airlines:</strong> Freight operators committed to reducing environmental footprint while maintaining efficiency.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="business-card-large">
+                            <h4>Secondary Clients</h4>
+                            <ul class="customer-list">
+                                <li>
+                                    <strong>Aviation Regulatory Agencies:</strong> Government bodies monitoring and enforcing aviation emission standards.
+                                </li>
+                                <li>
+                                    <strong>Government Environmental Bodies:</strong> Environmental agencies tracking climate impact of aviation sector.
+                                </li>
+                                <li>
+                                    <strong>Carbon Exchanges:</strong> Trading platforms requiring accurate aviation emission data for carbon credit markets.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Offerings Tab -->
+                <div class="tab-content" id="services">
+                    <div class="business-grid-single">
+                        <div class="business-card-large">
+                            <ul class="services-list-detailed">
+                                <li>
+                                    <h4>Core SaaS Subscription Platform</h4>
+                                    <p>Comprehensive cloud-based platform providing full access to contrail monitoring and carbon management tools.</p>
+                                </li>
+                                <li>
+                                    <h4>Real-time Contrail Detection and Monitoring</h4>
+                                    <p>AI-powered detection system providing continuous monitoring of contrail formation across flight networks.</p>
+                                </li>
+                                <li>
+                                    <h4>Flight Path Optimization Recommendations</h4>
+                                    <p>Data-driven suggestions for route adjustments to minimize contrail formation and reduce climate impact.</p>
+                                </li>
+                                <li>
+                                    <h4>Carbon Emission Tracking and Reporting</h4>
+                                    <p>Automated emission calculation and compliance reporting aligned with international aviation standards.</p>
+                                </li>
+                                <li>
+                                    <h4>API Data Integration Services</h4>
+                                    <p>Seamless integration with existing airline systems and third-party environmental platforms.</p>
+                                </li>
+                                <li>
+                                    <h4>Custom Report Generation</h4>
+                                    <p>Tailored analytical reports designed for specific stakeholder needs and regulatory requirements.</p>
+                                </li>
+                                <li>
+                                    <h4>Personalized Function Development</h4>
+                                    <p>Bespoke feature development to address unique operational requirements and business objectives.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Structure Tab -->
+                <div class="tab-content" id="costs">
+                    <div class="business-grid-triple">
+                        <div class="business-card-large">
+                            <h4>Technology Costs</h4>
+                            <ul class="cost-list">
+                                <li>AI model development and optimization</li>
+                                <li>Data algorithm enhancement and testing</li>
+                                <li>R&D investments for new features</li>
+                                <li>Software licensing and tools</li>
+                                <li>Cybersecurity infrastructure</li>
+                            </ul>
+                        </div>
+                        <div class="business-card-large">
+                            <h4>Hardware Costs</h4>
+                            <ul class="cost-list">
+                                <li>Satellite and flight data procurement</li>
+                                <li>High-performance computing servers</li>
+                                <li>Cloud infrastructure and storage</li>
+                                <li>Server maintenance and upgrades</li>
+                                <li>Network infrastructure</li>
+                            </ul>
+                        </div>
+                        <div class="business-card-large">
+                            <h4>Labor Costs</h4>
+                            <ul class="cost-list">
+                                <li>Sales and business development teams</li>
+                                <li>Technical support specialists</li>
+                                <li>Data scientists and AI engineers</li>
+                                <li>Market cultivation efforts</li>
+                                <li>Customer success managers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section id="market" class="market">
+        <div class="container">
+            <h2 class="section-title">Target Market & Opportunity</h2>
+
+            <!-- Market Overview -->
+            <div class="market-overview">
+                <p class="market-intro">Our platform addresses a critical gap in aviation carbon management, serving three primary customer segments in a rapidly evolving regulatory landscape.</p>
+            </div>
+
+            <!-- Customer Segments with Scenarios -->
+            <div class="market-segments">
+                <h3 class="subsection-title">Primary Customer Segments</h3>
+
+                <div class="segment-card">
+                    <div class="segment-image-placeholder">
+                        <img src="images/market-airlines.jpg" alt="Major International Airlines" class="segment-image">
+                        <div class="image-overlay">Airlines Scenario</div>
+                    </div>
+                    <div class="segment-content">
+                        <h4>Major International Airlines</h4>
+                        <div class="segment-badge">Core Users</div>
+                        <p>Airlines operating in Europe represent our core customer base, facing immediate compliance pressure from regulations like the EU's "Fit for 55". With contrail avoidance becoming financially urgent, these carriers possess both the motivation and financial resources to invest in comprehensive carbon management solutions.</p>
+                        <div class="segment-highlights">
+                            <div class="highlight-item">
+                                <strong>Primary Driver:</strong> EU "Fit for 55" compliance requirements
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Key Benefit:</strong> Avoid substantial future carbon costs through proactive monitoring
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Investment Capacity:</strong> Strong financial position for technology adoption
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="segment-card reverse">
+                    <div class="segment-content">
+                        <h4>Government & Aviation Regulatory Agencies</h4>
+                        <div class="segment-badge">Critical Segment</div>
+                        <p>Regulatory bodies urgently need robust tools to assess and monitor non-CO2 emissions across the entire aviation industry. Our platform provides the monitoring and accounting capabilities required to close this critical regulatory gap.</p>
+                        <div class="segment-highlights">
+                            <div class="highlight-item">
+                                <strong>Primary Need:</strong> Comprehensive industry-wide monitoring tools
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Key Benefit:</strong> Close regulatory gaps in non-CO2 emission tracking
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Use Case:</strong> Policy enforcement and compliance verification
+                            </div>
+                        </div>
+                    </div>
+                    <div class="segment-image-placeholder">
+                        <img src="images/market-regulatory.png" alt="Regulatory Agencies" class="segment-image">
+                        <div class="image-overlay">Regulatory Scenario</div>
+                    </div>
+                </div>
+
+                <div class="segment-card">
+                    <div class="segment-image-placeholder">
+                        <img src="images/market-carbon.jpg" alt="Carbon Market Participants" class="segment-image">
+                        <div class="image-overlay">Carbon Trading Scenario</div>
+                    </div>
+                    <div class="segment-content">
+                        <h4>Carbon Market Participants</h4>
+                        <div class="segment-badge">Emerging Segment</div>
+                        <p>Carbon trading platforms and exchanges require trusted, comprehensive data for accurate emission accounting. Our solution establishes a credible standard for contrail-impact accounting, adding completeness and reliability to the carbon trading ecosystem.</p>
+                        <div class="segment-highlights">
+                            <div class="highlight-item">
+                                <strong>Primary Need:</strong> Trusted, standardized contrail impact data
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Key Benefit:</strong> Enhanced credibility in carbon credit markets
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Market Impact:</strong> More complete and accurate carbon trading
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Size & Opportunity -->
+            <div class="market-size">
+                <h3 class="subsection-title">Addressable Market</h3>
+                <div class="market-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-number">35</div>
+                        <div class="stat-label">Major Airlines</div>
+                        <p>EU-based airlines requiring contrail management solutions by 2027</p>
+                    </div>
+                    <div class="stat-card highlighted">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-number">€17.5M</div>
+                        <div class="stat-label">Annual Market Value</div>
+                        <p>Immediate addressable market based on industry projections</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-number">€500K</div>
+                        <div class="stat-label">Average Contract Value</div>
+                        <p>Estimated annual contract per airline (Eurocontrol & SATAVIA data)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Ecosystem -->
+            <div class="market-ecosystem">
+                <h3 class="subsection-title">Market Ecosystem & Dynamics</h3>
+                <div class="ecosystem-content">
+                    <div class="ecosystem-item">
+                        <h4>Policy-Driven Demand</h4>
+                        <p>The industry ecosystem is fundamentally policy-driven, with regulatory frameworks like EU "Fit for 55" creating immediate and sustained demand. This regulatory pressure directly compels airlines to invest in new technological solutions to ensure compliance and avoid substantial future carbon costs.</p>
+                    </div>
+                    <div class="ecosystem-item">
+                        <h4>Market Gap</h4>
+                        <p>Current carbon management platforms primarily focus on CO2 emissions calculation, largely lacking the capability to integrate the critical climate impact of contrails into their assessments. This creates a significant market opportunity for specialized solutions.</p>
+                    </div>
+                    <div class="ecosystem-item">
+                        <h4>Buyer-Payer Alignment</h4>
+                        <p>In most cases, the buyer and payer are the same entity—the airline purchasing and directly using the service. This streamlined decision-making process accelerates adoption and reduces sales complexity.</p>
+                    </div>
+                    <div class="ecosystem-item">
+                        <h4>Emerging Partnerships</h4>
+                        <p>Partnerships between technology companies and airlines are emerging to explore practical applications. However, these efforts remain fragmented, underscoring the need for our platform to unite and standardize the industry approach.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture-content">
+                <img src="images/construct.jpg" alt="System Architecture Diagram" class="architecture-diagram">
+
+                <div class="architecture-description">
+                    <h3>Multi-Source Data Integration</h3>
+                    <p>Our platform integrates satellite imagery, ADS-B flight data, and carbon market information through a sophisticated AI-powered pipeline. The custom U-Net model enables precise contrail detection, while our analytics engine transforms complex data into actionable insights for airlines and regulatory bodies.</p>
+                </div>
+
+                <!-- System Flow Chart -->
+                <div class="flow-chart">
+                    <h3>System Workflow</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h4>Data Collection</h4>
+                                <p>Gather satellite imagery from GOES/Himawari, ADS-B flight tracking data, and meteorological information in real-time.</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h4>AI Detection</h4>
+                                <p>Custom U-Net model processes satellite images to identify and segment contrail formations with high precision.</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h4>Data Fusion</h4>
+                                <p>Match detected contrails with flight trajectories, correlating emissions data with specific flights and routes.</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">04</div>
+                            <div class="step-content">
+                                <h4>Analytics Engine</h4>
+                                <p>Calculate climate impact metrics, carbon footprint, and generate predictive models for contrail formation.</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">05</div>
+                            <div class="step-content">
+                                <h4>Actionable Insights</h4>
+                                <p>Deliver optimization recommendations, compliance reports, and strategic guidance to airlines and regulators.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <p class="team-vision">Our shared vision is to empower the aviation industry's transition to net-zero emissions: we aim to build a data-driven, AI-integrated carbon management platform that turns complex contrail, flight, and emission data into actionable solutions, balancing environmental impact reduction and economic value for airlines and stakeholders.</p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/Gladys Liu.jpg" alt="Gladys Liu">
+                    </div>
+                    <div class="member-info">
+                        <h3>Gladys Liu</h3>
+                        <p class="member-title">CTO & CEO</p>
+                        <p class="member-bio">A lifelong enthusiast of AI and environmental stewardship, she leads the project's technical innovation with a relentless focus on leveraging technology to address climate challenges. Her passion for deep learning has led her to specialize in designing AI models that solve pressing environmental problems, from optimizing the custom U-Net for precise contrail detection to integrating multi-source data into a seamless, impactful framework.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/Zoe Wang.jpg" alt="Zoe Wang">
+                    </div>
+                    <div class="member-info">
+                        <h3>Zoe Wang</h3>
+                        <p class="member-title">CFO</p>
+                        <p class="member-bio">Supporting the commercial side of multiple projects in school, she helped to shape ideas into workable plans. Through her involvement in team competitions, she thrives in building market strategy and making ideas visible. She enjoys collaborating with others and believes different perspectives make projects stronger.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Results Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Results</h2>
+            <p class="research-intro">Our research demonstrates the effectiveness of AI-driven contrail detection and carbon emission monitoring in aviation. The following visualizations showcase key findings from our comprehensive study.</p>
+
+            <div class="research-grid">
+                <div class="research-item">
+                    <img src="../assert/page7_img1.jpeg" alt="Research Result 1">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page10_img1.jpeg" alt="Research Result 2">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page10_img2.jpeg" alt="Research Result 3">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page11_img1.jpeg" alt="Research Result 4">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page17_img1.jpeg" alt="Research Result 5">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page17_img2.jpeg" alt="Research Result 6">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page18_img1.jpeg" alt="Research Result 7">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page20_img1.jpeg" alt="Research Result 8">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page22_img1.jpeg" alt="Research Result 9">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page23_img1.jpeg" alt="Research Result 10">
+                </div>
+                <div class="research-item">
+                    <img src="../assert/page24_img1.jpeg" alt="Research Result 11">
+                </div>
+            </div>
+
+            <div class="research-paper">
+                <h3>Full Research Paper</h3>
+                <p>For comprehensive details on our methodology, findings, and analysis, please refer to our complete research paper.</p>
+                <a href="../website/高年级组-能源与环境-航空业尾迹云与碳排放协同监测及气候影响评估研究-项目研究论文.pdf" class="btn btn-primary" target="_blank">Download Research Paper</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TrailSyncPioneers</h4>
+                    <p>Empowering aviation's transition to net-zero emissions through AI-driven carbon management.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#business">Business Model</a></li>
+                        <li><a href="#team">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>For inquiries and partnership opportunities</p>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong></p>
+                        <a href="mailto:contact@trailsyncpioneers.com" class="email-link">contact@trailsyncpioneers.com</a>
+                        <a href="mailto:partnerships@trailsyncpioneers.com" class="email-link">partnerships@trailsyncpioneers.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TrailSyncPioneers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

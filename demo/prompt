@@ -1,0 +1,10 @@
+生成一个商业网页，要求内容文字都为英文内容主要如下：
+1. 企业名字为：TrailSYncPioneers，logo在demo\images\logo.jpg
+2. slogan为Fly Cleaner. Spend Smarter.
+3.business model在demo\business model
+4. team介绍在demo\team中，其中每个人的图片为demo\images\Gladys Liu.jpg，demo\images\Zoe Wang.jpg（以名字命名）
+5. 架构图为demo\images\construct.jpg
+6. background中尾迹云形成原理可参照demo\images\background.jpg
+7. 项目的论文在website\高年级组-能源与环境-航空业尾迹云与碳排放协同监测及气候影响评估研究-项目研究论文.pdf中
+8. 其他论文中的结果图在assert文件夹中可以加入
+页面中尽量不要包含emoji，商业较重如果还需要加入图片可以和我说，但尽量不要太多

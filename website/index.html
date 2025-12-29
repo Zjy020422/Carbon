@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ContrailTracker - AI-Powered Aviation Carbon Emission Tracking & Analysis Platform">
+    <title>ContrailTracker | Aviation Carbon Intelligence Platform</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-cloud"></i>
+                    <span>ContrailTracker</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#technology" class="nav-link">Technology</a></li>
+                    <li><a href="#demo" class="nav-link">Live Demo</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#demo" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    <span>AI-Powered Carbon Intelligence</span>
+                </div>
+                <h1 class="hero-title">
+                    Transforming Aviation's
+                    <span class="gradient-text">Carbon Future</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Real-time contrail detection, carbon emission tracking, and climate impact analysis
+                    powered by satellite imagery and advanced machine learning.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="2197">0</div>
+                        <div class="stat-label">Tonnes CO₂ Tracked</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="65">0</div>
+                        <div class="stat-label">Flights Analyzed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="98.9">0</div>
+                        <div class="stat-label">% Accuracy</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn btn-large btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Launch Platform
+                    </a>
+                    <a href="#about" class="btn btn-large btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Watch Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about">
+                <div class="scroll-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">About ContrailTracker</span>
+                <h2 class="section-title">Pioneering Climate-Smart Aviation</h2>
+                <p class="section-subtitle">
+                    ContrailTracker leverages cutting-edge AI and satellite technology to provide
+                    unprecedented insights into aviation's climate impact.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-grid">
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="about-icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <h3>Satellite Integration</h3>
+                        <p>Real-time GOES-16 satellite imagery fusion with flight data for precise contrail detection and tracking.</p>
+                        <div class="about-stat">
+                            <span class="stat-value">8</span>
+                            <span class="stat-unit">timesteps</span>
+                        </div>
+                    </div>
+
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="about-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Detection Model</h3>
+                        <p>U-Net deep learning architecture trained on human-labeled contrail datasets with 98.9% correlation accuracy.</p>
+                        <div class="about-stat">
+                            <span class="stat-value">3.36M</span>
+                            <span class="stat-unit">parameters</span>
+                        </div>
+                    </div>
+
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="about-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Carbon Analytics</h3>
+                        <p>Comprehensive CO₂ emission calculation with multi-market carbon trading cost analysis and optimization.</p>
+                        <div class="about-stat">
+                            <span class="stat-value">5</span>
+                            <span class="stat-unit">carbon markets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-impact" data-aos="fade-up" data-aos-delay="400">
+                    <div class="impact-content">
+                        <h3>Climate Impact</h3>
+                        <p>Contrails contribute 10-30% additional radiative forcing beyond direct CO₂ emissions.
+                           Our platform quantifies this hidden climate cost, enabling data-driven route optimization
+                           and policy decisions.</p>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <i class="fas fa-cloud-sun"></i>
+                                <div>
+                                    <strong>25%</strong>
+                                    <span>Equivalent Emission Increase from Contrails</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-globe-americas"></i>
+                                <div>
+                                    <strong>530×650 km</strong>
+                                    <span>Coverage per Satellite Image</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Core Capabilities</span>
+                <h2 class="section-title">Enterprise-Grade Features</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-number">01</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3>Real-Time Satellite Fusion</h3>
+                    <p>Spatiotemporal matching of GOES-16 infrared imagery with ADS-B flight data within ±30 minute windows.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Multi-band IR processing (11, 14, 15 μm)</li>
+                        <li><i class="fas fa-check"></i> Automated coordinate transformation</li>
+                        <li><i class="fas fa-check"></i> 100% positioning accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-number">02</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Deep Learning Detection</h3>
+                    <p>State-of-the-art U-Net CNN for pixel-level contrail segmentation and classification.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> 40-epoch training convergence</li>
+                        <li><i class="fas fa-check"></i> Adaptive threshold optimization (0.95)</li>
+                        <li><i class="fas fa-check"></i> Handles extreme class imbalance (<1%)</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-number">03</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Carbon Emission Quantification</h3>
+                    <p>Industry-standard emission factor models with multi-aircraft type support and route analysis.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> ICAO-compliant methodology</li>
+                        <li><i class="fas fa-check"></i> R²=0.989 distance-emission correlation</li>
+                        <li><i class="fas fa-check"></i> Aircraft-specific fuel efficiency</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="feature-number">04</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Carbon Market Intelligence</h3>
+                    <p>Comparative analysis across 5 global carbon trading systems with cost optimization insights.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> EU ETS, CORSIA, China, California, RGGI</li>
+                        <li><i class="fas fa-check"></i> 8.64x cost variance analysis</li>
+                        <li><i class="fas fa-check"></i> ROI projection & savings estimation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="feature-number">05</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Advanced Analytics Dashboard</h3>
+                    <p>Interactive visualizations for emission patterns, flight corridors, and temporal trends.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real-time data streaming</li>
+                        <li><i class="fas fa-check"></i> Customizable reporting</li>
+                        <li><i class="fas fa-check"></i> Export to CSV/PDF</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="feature-number">06</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Route Optimization</h3>
+                    <p>AI-powered recommendations for contrail-avoiding flight paths with emission reduction forecasts.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Altitude/route adjustment suggestions</li>
+                        <li><i class="fas fa-check"></i> 10-15% potential emission reduction</li>
+                        <li><i class="fas fa-check"></i> Cost-benefit analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section id="technology" class="section technology">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Technology Stack</span>
+                <h2 class="section-title">Built with Cutting-Edge Tech</h2>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-category" data-aos="fade-right">
+                    <h3><i class="fas fa-code"></i> Machine Learning</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <img src="https://pytorch.org/assets/images/pytorch-logo.png" alt="PyTorch">
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-network-wired"></i>
+                            <span>U-Net CNN</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category" data-aos="fade-up">
+                    <h3><i class="fas fa-database"></i> Data Processing</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python 3.10+</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-table"></i>
+                            <span>Pandas/NumPy</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-map"></i>
+                            <span>Pyproj/GIS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category" data-aos="fade-left">
+                    <h3><i class="fas fa-satellite"></i> Data Sources</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fas fa-globe"></i>
+                            <span>GOES-16</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-plane"></i>
+                            <span>OpenSky ADS-B</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>Kaggle Datasets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-architecture" data-aos="fade-up">
+                <h3>System Architecture</h3>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <div class="arch-box">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            <span>Data Ingestion</span>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">
+                            <i class="fas fa-cogs"></i>
+                            <span>Preprocessing</span>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Fusion Engine</span>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <div class="arch-box">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Detection</span>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">
+                            <i class="fas fa-calculator"></i>
+                            <span>Emission Calc</span>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="section demo">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Interactive Platform</span>
+                <h2 class="section-title">Experience ContrailTracker Live</h2>
+            </div>
+
+            <div class="demo-container" data-aos="fade-up">
+                <div class="demo-sidebar">
+                    <h3>Analysis Tools</h3>
+                    <div class="demo-tabs">
+                        <button class="demo-tab active" data-tab="contrail">
+                            <i class="fas fa-cloud"></i>
+                            <span>Contrail Detection</span>
+                        </button>
+                        <button class="demo-tab" data-tab="emission">
+                            <i class="fas fa-smog"></i>
+                            <span>Emission Analysis</span>
+                        </button>
+                        <button class="demo-tab" data-tab="market">
+                            <i class="fas fa-coins"></i>
+                            <span>Carbon Markets</span>
+                        </button>
+                    </div>
+
+                    <div class="demo-controls">
+                        <h4>Upload Data</h4>
+                        <div class="file-upload">
+                            <input type="file" id="satellite-upload" accept=".nc,.npy">
+                            <label for="satellite-upload">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Satellite Data</span>
+                            </label>
+                        </div>
+                        <div class="file-upload">
+                            <input type="file" id="flight-upload" accept=".csv">
+                            <label for="flight-upload">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Flight Data</span>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="run-analysis">
+                            <i class="fas fa-play"></i>
+                            Run Analysis
+                        </button>
+                    </div>
+                </div>
+
+                <div class="demo-main">
+                    <div class="demo-content active" id="contrail-tab">
+                        <div class="demo-visualization">
+                            <img src="images/contrail_fusion.png" alt="Contrail Detection" id="contrail-viz">
+                            <div class="viz-overlay">
+                                <div class="viz-stats">
+                                    <div class="viz-stat">
+                                        <span class="label">Contrail Coverage</span>
+                                        <span class="value">0.47%</span>
+                                    </div>
+                                    <div class="viz-stat">
+                                        <span class="label">Flights Detected</span>
+                                        <span class="value">48</span>
+                                    </div>
+                                    <div class="viz-stat">
+                                        <span class="label">Resolution</span>
+                                        <span class="value">256×256</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h4>Satellite-Contrail-Flight Fusion</h4>
+                            <p>Real-time fusion of GOES-16 false-color satellite imagery, human-labeled contrail masks,
+                               and 48 flight trajectories across the North Atlantic corridor.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-content" id="emission-tab">
+                        <div class="demo-visualization">
+                            <img src="images/distance_emission.png" alt="Emission Analysis" id="emission-viz">
+                        </div>
+                        <div class="demo-info">
+                            <h4>Comprehensive Emission Analytics</h4>
+                            <p>Multi-dimensional analysis: CO₂ distribution, fuel-emission correlation (R²=0.989),
+                               TOP 10 high-emission flights, aircraft type comparison, and distance-emission trends.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-content" id="market-tab">
+                        <div class="demo-visualization">
+                            <img src="images/carbon_markets.png" alt="Carbon Market" id="market-viz">
+                        </div>
+                        <div class="demo-info">
+                            <h4>Global Carbon Market Comparison</h4>
+                            <p>Comparative cost analysis across 5 carbon trading systems: EU ETS ($95/tCO₂), CORSIA ($20),
+                               California ($30), RGGI ($15), and China ($11) - revealing 8.64x cost variance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-api" data-aos="fade-up">
+                <h3>Developer API Access</h3>
+                <div class="api-code">
+                    <pre><code class="language-python">import requests
+
+# Analyze flight emissions
+response = requests.post('https://api.contrailtracker.com/v1/analyze',
+    json={
+        'flight_data': 'path/to/flights.csv',
+        'satellite_data': 'path/to/satellite.nc',
+        'carbon_market': 'EU_ETS'
+    },
+    headers={'Authorization': 'Bearer YOUR_API_KEY'}
+)
+
+results = response.json()
+print(f"Total CO2: {results['total_co2_tonnes']} tonnes")
+print(f"Carbon Cost: ${results['carbon_cost_usd']:,.2f}")
+print(f"Contrail Impact: +{results['contrail_impact_pct']}%")</code></pre>
+                </div>
+                <a href="#contact" class="btn btn-secondary">Request API Key</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Our Team</span>
+                <h2 class="section-title">TrailSync Pioneers</h2>
+                <p class="section-subtitle">
+                    A passionate team of high school students driven to tackle climate change through technology
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Project Lead</h3>
+                        <span class="team-role">AI Research & Development</span>
+                        <p>Specialized in deep learning and computer vision. Led the development of the U-Net contrail detection model.</p>
+                        <div class="team-skills">
+                            <span>PyTorch</span>
+                            <span>CNN</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Data Scientist</h3>
+                        <span class="team-role">Analytics & Modeling</span>
+                        <p>Expert in statistical analysis and emission modeling. Developed the carbon emission calculation framework.</p>
+                        <div class="team-skills">
+                            <span>Pandas</span>
+                            <span>Statistics</span>
+                            <span>GIS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-stats" data-aos="fade-up">
+                <div class="team-stat-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div>
+                        <strong>High School Students</strong>
+                        <span>Passionate about Climate Tech</span>
+                    </div>
+                </div>
+                <div class="team-stat-item">
+                    <i class="fas fa-code"></i>
+                    <div>
+                        <strong>10,000+</strong>
+                        <span>Lines of Code Written</span>
+                    </div>
+                </div>
+                <div class="team-stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <div>
+                        <strong>Award-Winning</strong>
+                        <span>Science Fair Recognition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title">Start Your Climate Journey</h2>
+                <p class="section-subtitle">
+                    Join airlines, regulators, and researchers using ContrailTracker to reduce aviation's climate impact
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Enterprise Solutions</h3>
+                    <p>Custom deployment for airlines, carbon offset providers, and regulatory agencies.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>enterprise@contrailtracker.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Office</strong>
+                                <span>San Francisco, CA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-aos="fade-left" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company / Organization">
+                    </div>
+                    <div class="form-group">
+                        <select>
+                            <option>Interested In...</option>
+                            <option>Enterprise License</option>
+                            <option>API Access</option>
+                            <option>Research Collaboration</option>
+                            <option>Custom Development</option>
+                            <option>General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Message *" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-cloud"></i>
+                        <span>ContrailTracker</span>
+                    </div>
+                    <p>AI-powered aviation carbon intelligence platform transforming the future of sustainable flight.</p>
+                    <div class="footer-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>Carbon Neutral Operation</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#demo">Live Demo</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ContrailTracker. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
