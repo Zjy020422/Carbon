@@ -115,23 +115,100 @@
                 <div class="tab-content active" id="revenue">
                     <div class="business-grid-single">
                         <div class="business-card-large">
-                            <div class="business-item">
-                                <h4>SaaS Subscription</h4>
-                                <p>Tiered pricing for airlines based on fleet size, route coverage, and data query capacity. Annual or monthly billing options available.</p>
-                                <span class="price-tag">50,000 - 200,000 CNY/year</span>
-                            </div>
-                            <div class="business-item">
-                                <h4>Professional Consulting</h4>
-                                <p>In-depth emission reduction path planning and customized development services tailored to airline needs.</p>
-                            </div>
-                            <div class="business-item">
-                                <h4>API Data Access</h4>
-                                <p>Pay-per-use data access for government bodies, aviation regulatory agencies, and carbon exchanges.</p>
-                            </div>
-                            <div class="business-item">
-                                <h4>Custom Analysis Reports</h4>
-                                <p>Specialized reports designed for regulatory institutions and carbon market participants.</p>
-                                <span class="price-tag">20,000 - 50,000 CNY/report</span>
+                            <h3 style="text-align: center; margin-bottom: 30px;">Interactive Pricing Calculator</h3>
+
+                            <!-- Service Selection -->
+                            <div class="pricing-calculator">
+                                <div class="service-selector">
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="saas" checked>
+                                        <div class="service-card">
+                                            <h4>SaaS Subscription</h4>
+                                            <p>For Airlines - Comprehensive platform access</p>
+                                            <span class="price-range">50,000 - 200,000 CNY/year</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="consulting">
+                                        <div class="service-card">
+                                            <h4>Professional Consulting</h4>
+                                            <p>For Airlines - Customized development services</p>
+                                            <span class="price-range">20,000 - 50,000 CNY/copy</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="api">
+                                        <div class="service-card">
+                                            <h4>API Data Access</h4>
+                                            <p>For Regulatory Institutions - Pay-per-use data access</p>
+                                            <span class="price-range">500 - 5,000 CNY/month</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <!-- Dynamic Pricing Details -->
+                                <div class="pricing-details">
+                                    <!-- SaaS Pricing -->
+                                    <div id="saas-pricing" class="pricing-section active">
+                                        <h4>SaaS Subscription Pricing</h4>
+                                        <div class="pricing-input">
+                                            <label for="fleet-size">Fleet Size (aircraft):</label>
+                                            <input type="range" id="fleet-size" min="10" max="500" value="50" step="10">
+                                            <span id="fleet-size-value">50</span>
+                                        </div>
+                                        <div class="pricing-result">
+                                            <div class="result-label">Estimated Annual Cost:</div>
+                                            <div class="result-price" id="saas-price">75,000 CNY</div>
+                                            <div class="result-note">Based on fleet size and route coverage</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Consulting Pricing -->
+                                    <div id="consulting-pricing" class="pricing-section">
+                                        <h4>Professional Consulting Pricing</h4>
+                                        <div class="pricing-input">
+                                            <label for="project-complexity">Project Complexity:</label>
+                                            <select id="project-complexity">
+                                                <option value="basic">Basic Development (20,000 CNY)</option>
+                                                <option value="standard">Standard Development (35,000 CNY)</option>
+                                                <option value="advanced">Advanced Development (50,000 CNY)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pricing-result">
+                                            <div class="result-label">Project Cost:</div>
+                                            <div class="result-price" id="consulting-price">20,000 CNY</div>
+                                            <div class="result-note">One-time customized development fee</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- API Pricing -->
+                                    <div id="api-pricing" class="pricing-section">
+                                        <h4>API Data Access Pricing</h4>
+                                        <div class="pricing-input">
+                                            <label for="api-tier">Access Tier:</label>
+                                            <select id="api-tier">
+                                                <option value="basic">Basic (500 CNY/month)</option>
+                                                <option value="professional">Professional (2,000 CNY/month)</option>
+                                                <option value="enterprise">Enterprise (5,000 CNY/month)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pricing-input">
+                                            <label for="token-usage">Estimated Monthly Tokens:</label>
+                                            <input type="number" id="token-usage" min="0" max="100000" value="1000" step="100">
+                                        </div>
+                                        <div class="pricing-result">
+                                            <div class="result-label">Monthly Cost Breakdown:</div>
+                                            <div class="cost-breakdown">
+                                                <div>Base Fee: <span id="api-base-fee">500 CNY</span></div>
+                                                <div>Token Usage: <span id="api-token-cost">750 CNY</span></div>
+                                                <div class="total-cost">Total: <span id="api-total-price">1,250 CNY</span></div>
+                                            </div>
+                                            <div class="result-note">Token rate: 0.5-1 CNY per token</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -479,48 +556,263 @@
     <section id="research" class="research">
         <div class="container">
             <h2 class="section-title">Research Results</h2>
-            <p class="research-intro">Our research demonstrates the effectiveness of AI-driven contrail detection and carbon emission monitoring in aviation. The following visualizations showcase key findings from our comprehensive study.</p>
+            <p class="research-intro">Our research demonstrates the effectiveness of AI-driven contrail detection and carbon emission monitoring in aviation. The following sections present our key findings organized by research phase.</p>
 
-            <div class="research-grid">
-                <div class="research-item">
-                    <img src="../assert/page7_img1.jpeg" alt="Research Result 1">
+            <!-- Research Pipeline -->
+            <div class="research-pipeline">
+
+                <!-- Phase 1: Contrail Detection -->
+                <div class="research-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">01</div>
+                        <div class="phase-title-container">
+                            <h3 class="phase-title">AI-Powered Contrail Detection</h3>
+                            <p class="phase-subtitle">Deep Learning Model Performance and Validation Results</p>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-description">
+                            <h4>Model Training & Validation</h4>
+                            <p>Our deep learning model demonstrates excellent performance in contrail detection through rigorous training and validation processes. The model achieves high accuracy in identifying contrail formations from satellite imagery, with consistent performance across different atmospheric conditions and geographic regions.</p>
+                            <div class="key-findings">
+                                <div class="finding-item">
+                                    <strong>Training Convergence:</strong> Model achieves stable convergence with minimal loss across training iterations
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Validation Performance:</strong> Consistent accuracy metrics demonstrate robust generalization capabilities
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Detection Results:</strong> High-precision identification of contrail patterns with clear visual segmentation
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phase-visuals">
+                            <div class="visual-item">
+                                <img src="assert/page10_img1.jpeg" alt="Model Training Performance">
+                            </div>
+                            <div class="visual-item">
+                                <img src="assert/page10_img2.jpeg" alt="Model Validation Metrics">
+                            </div>
+                            <div class="visual-item large">
+                                <img src="assert/page18_img1.jpeg" alt="Contrail Detection Results">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="research-item">
-                    <img src="../assert/page10_img1.jpeg" alt="Research Result 2">
+
+                <div class="phase-connector">↓</div>
+
+                <!-- Phase 2: Data Integration & Flight Correlation -->
+                <div class="research-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">02</div>
+                        <div class="phase-title-container">
+                            <h3 class="phase-title">Climate Impact Visualization</h3>
+                            <p class="phase-subtitle">Radiative Forcing Distribution and Geospatial Analysis</p>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-description">
+                            <h4>Radiative Forcing Assessment</h4>
+                            <p>Advanced radiative transfer modeling reveals the spatial distribution and magnitude of contrail-induced climate forcing. Our analysis maps the radiative effects across different flight corridors and atmospheric conditions, providing critical insights for route optimization and emission reduction strategies.</p>
+                            <div class="key-findings">
+                                <div class="finding-item">
+                                    <strong>Spatial Distribution:</strong> Clear geographic patterns in radiative forcing intensity across major flight routes
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Warming Effects:</strong> Quantified positive radiative forcing demonstrates contrail contribution to climate warming
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Regional Hotspots:</strong> Identified high-impact zones requiring targeted mitigation measures
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phase-visuals">
+                            <div class="visual-item large">
+                                <img src="assert/page20_img1.jpeg" alt="Radiative Forcing Distribution">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="research-item">
-                    <img src="../assert/page10_img2.jpeg" alt="Research Result 3">
+
+                <div class="phase-connector">↓</div>
+
+                <!-- Phase 3: Carbon Emission Analysis -->
+                <div class="research-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">03</div>
+                        <div class="phase-title-container">
+                            <h3 class="phase-title">CO2 Emission Distribution Analysis</h3>
+                            <p class="phase-subtitle">Flight Distance Correlation and Emission Patterns</p>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-description">
+                            <h4>Emission Distribution Insights</h4>
+                            <p>Comprehensive analysis of CO2 emission patterns across flight operations reveals critical relationships between flight distance and carbon output. Our statistical modeling identifies emission distribution characteristics and quantifies the correlation between operational parameters and environmental impact.</p>
+                            <div class="key-findings">
+                                <div class="finding-item">
+                                    <strong>Emission Distribution:</strong> Statistical analysis reveals concentration patterns and variability in CO2 emissions across flight operations
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Distance Correlation:</strong> Strong positive relationship between flight distance and total CO2 emissions with quantified regression metrics
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Optimization Potential:</strong> Data-driven insights enable targeted strategies for emission reduction across different route categories
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phase-visuals">
+                            <div class="visual-item large">
+                                <img src="assert/page22_img1.jpeg" alt="CO2 Emission Distribution and Flight Distance Correlation">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="research-item">
-                    <img src="../assert/page11_img1.jpeg" alt="Research Result 4">
+
+                <div class="phase-connector">↓</div>
+
+                <!-- Phase 4: Economic Impact & Market Analysis -->
+                <div class="research-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">04</div>
+                        <div class="phase-title-container">
+                            <h3 class="phase-title">Economic Impact & Market Distribution Analysis</h3>
+                            <p class="phase-subtitle">Cost Structure and Revenue Stream Breakdown</p>
+                        </div>
+                    </div>
+                    <div class="phase-content-full">
+                        <div class="phase-description">
+                            <h4>Business Model Economics</h4>
+                            <p>Detailed financial modeling reveals the economic structure of contrail management solutions. Our analysis quantifies cost distributions across technology development, data acquisition, and operational expenses, while identifying revenue opportunities through SaaS subscriptions, consulting services, and data access fees.</p>
+                            <div class="key-findings">
+                                <div class="finding-item">
+                                    <strong>Cost Allocation:</strong> Technology and data costs dominate initial investment, with human capital essential for market development
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Revenue Streams:</strong> Diversified income sources from platform subscriptions, professional services, and API access
+                                </div>
+                                <div class="finding-item">
+                                    <strong>Market Viability:</strong> Balanced cost-revenue structure demonstrates sustainable business model for aviation carbon management
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Data Table -->
+                        <div class="interactive-table-section">
+                            <h4>Cost Structure Breakdown</h4>
+
+                            <!-- Cost Structure Table -->
+                            <div class="data-table-container active" id="cost-table">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Category</th>
+                                            <th>Component</th>
+                                            <th>Description</th>
+                                            <th>Priority</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="4"><strong>Technology Costs</strong></td>
+                                            <td>AI Model Development</td>
+                                            <td>Deep learning algorithm optimization and training</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Data Algorithm Enhancement</td>
+                                            <td>Continuous improvement of detection and analysis algorithms</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>R&D Investment</td>
+                                            <td>Research for new features and capabilities</td>
+                                            <td><span class="priority medium">Medium</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cybersecurity</td>
+                                            <td>Infrastructure protection and data security</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="4"><strong>Data & Hardware</strong></td>
+                                            <td>Satellite Data Procurement</td>
+                                            <td>Acquisition of GOES-16 and Himawari-8 imagery</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Flight Data Access</td>
+                                            <td>ADS-B tracking and aircraft information feeds</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cloud Infrastructure</td>
+                                            <td>Computing servers and storage systems</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Network Infrastructure</td>
+                                            <td>Data transmission and system connectivity</td>
+                                            <td><span class="priority medium">Medium</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3"><strong>Human Capital</strong></td>
+                                            <td>Sales & Business Development</td>
+                                            <td>Client acquisition and partnership development</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Technical Support</td>
+                                            <td>Customer service and platform maintenance</td>
+                                            <td><span class="priority medium">Medium</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Data Scientists & Engineers</td>
+                                            <td>Core team for platform development and optimization</td>
+                                            <td><span class="priority high">High</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Visual Distribution Chart -->
+                        <div class="phase-visuals-centered">
+                            <div class="visual-item large">
+                                <img src="assert/page24_img1.jpeg" alt="Cost and Revenue Distribution">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="research-item">
-                    <img src="../assert/page17_img1.jpeg" alt="Research Result 5">
-                </div>
-                <div class="research-item">
-                    <img src="../assert/page17_img2.jpeg" alt="Research Result 6">
-                </div>
-                <div class="research-item">
-                    <img src="../assert/page18_img1.jpeg" alt="Research Result 7">
-                </div>
-                <div class="research-item">
-                    <img src="../assert/page20_img1.jpeg" alt="Research Result 8">
-                </div>
-                <div class="research-item">
-                    <img src="../assert/page22_img1.jpeg" alt="Research Result 9">
-                </div>
-                <div class="research-item">
-                    <img src="../assert/page23_img1.jpeg" alt="Research Result 10">
-                </div>
-                <div class="research-item">
-                    <img src="../assert/page24_img1.jpeg" alt="Research Result 11">
-                </div>
+
             </div>
 
-            <div class="research-paper">
-                <h3>Full Research Paper</h3>
-                <p>For comprehensive details on our methodology, findings, and analysis, please refer to our complete research paper.</p>
-                <a href="../website/高年级组-能源与环境-航空业尾迹云与碳排放协同监测及气候影响评估研究-项目研究论文.pdf" class="btn btn-primary" target="_blank">Download Research Paper</a>
+            <!-- Research Summary -->
+            <div class="research-summary">
+                <h3>Key Achievements</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-icon">🎯</div>
+                        <h4>High Accuracy Detection</h4>
+                        <p>AI model achieves superior performance in identifying and segmenting contrails from satellite imagery</p>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">🔗</div>
+                        <h4>Seamless Data Integration</h4>
+                        <p>Successfully fused multi-source data streams for comprehensive flight-contrail correlation</p>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">📊</div>
+                        <h4>Quantified Climate Impact</h4>
+                        <p>Robust methodology for converting contrail effects into actionable carbon metrics</p>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">💰</div>
+                        <h4>Market-Ready Framework</h4>
+                        <p>Economic models compatible with existing carbon trading systems and regulations</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

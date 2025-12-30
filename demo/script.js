@@ -92,7 +92,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all cards and sections
-document.querySelectorAll('.business-card, .team-member, .research-item').forEach(el => {
+document.querySelectorAll('.business-card, .team-member, .research-phase, .research-summary').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -119,3 +119,122 @@ tabButtons.forEach(button => {
 
 // Consolidate loading state with slideshow initialization
 // (Already handled in the earlier window load event)
+
+// ========== Pricing Calculator Functionality ==========
+
+// Service selection handler
+const serviceRadios = document.querySelectorAll('input[name="service"]');
+const pricingSections = document.querySelectorAll('.pricing-section');
+
+serviceRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+        // Hide all pricing sections
+        pricingSections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Show selected pricing section
+        const selectedService = this.value;
+        document.getElementById(`${selectedService}-pricing`).classList.add('active');
+    });
+});
+
+// SaaS Subscription Pricing Calculator
+const fleetSizeSlider = document.getElementById('fleet-size');
+const fleetSizeValue = document.getElementById('fleet-size-value');
+const saasPrice = document.getElementById('saas-price');
+
+function calculateSaaSPrice() {
+    const fleetSize = parseInt(fleetSizeSlider.value);
+    fleetSizeValue.textContent = fleetSize;
+
+    // Price calculation: 50,000 base + (fleet size - 10) * 300
+    // This gives a range from 50,000 (10 aircraft) to 200,000 (500 aircraft)
+    const basePrice = 50000;
+    const pricePerAircraft = 300;
+    const calculatedPrice = basePrice + (fleetSize - 10) * pricePerAircraft;
+
+    // Format price with thousand separators
+    saasPrice.textContent = calculatedPrice.toLocaleString('zh-CN') + ' CNY';
+}
+
+if (fleetSizeSlider) {
+    fleetSizeSlider.addEventListener('input', calculateSaaSPrice);
+    calculateSaaSPrice(); // Initial calculation
+}
+
+// Professional Consulting Pricing
+const projectComplexity = document.getElementById('project-complexity');
+const consultingPrice = document.getElementById('consulting-price');
+
+function updateConsultingPrice() {
+    const prices = {
+        'basic': 20000,
+        'standard': 35000,
+        'advanced': 50000
+    };
+
+    const selectedComplexity = projectComplexity.value;
+    const price = prices[selectedComplexity];
+
+    consultingPrice.textContent = price.toLocaleString('zh-CN') + ' CNY';
+}
+
+if (projectComplexity) {
+    projectComplexity.addEventListener('change', updateConsultingPrice);
+    updateConsultingPrice(); // Initial price
+}
+
+// API Data Access Pricing Calculator
+const apiTier = document.getElementById('api-tier');
+const tokenUsage = document.getElementById('token-usage');
+const apiBaseFee = document.getElementById('api-base-fee');
+const apiTokenCost = document.getElementById('api-token-cost');
+const apiTotalPrice = document.getElementById('api-total-price');
+
+function calculateAPIPrice() {
+    const tierPrices = {
+        'basic': 500,
+        'professional': 2000,
+        'enterprise': 5000
+    };
+
+    const selectedTier = apiTier.value;
+    const baseFee = tierPrices[selectedTier];
+    const tokens = parseInt(tokenUsage.value) || 0;
+
+    // Token pricing: 0.75 CNY per token (average of 0.5-1 CNY)
+    const tokenRate = 0.75;
+    const tokenCost = tokens * tokenRate;
+    const totalCost = baseFee + tokenCost;
+
+    apiBaseFee.textContent = baseFee.toLocaleString('zh-CN') + ' CNY';
+    apiTokenCost.textContent = tokenCost.toLocaleString('zh-CN') + ' CNY';
+    apiTotalPrice.textContent = totalCost.toLocaleString('zh-CN') + ' CNY';
+}
+
+if (apiTier && tokenUsage) {
+    apiTier.addEventListener('change', calculateAPIPrice);
+    tokenUsage.addEventListener('input', calculateAPIPrice);
+    calculateAPIPrice(); // Initial calculation
+}
+
+// ========== Interactive Data Table Functionality ==========
+
+// Table tab switching
+const tableTabButtons = document.querySelectorAll('.table-tab-btn');
+const dataTableContainers = document.querySelectorAll('.data-table-container');
+
+tableTabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const targetTable = this.getAttribute('data-table');
+
+        // Remove active class from all buttons and containers
+        tableTabButtons.forEach(btn => btn.classList.remove('active'));
+        dataTableContainers.forEach(container => container.classList.remove('active'));
+
+        // Add active class to clicked button and corresponding container
+        this.classList.add('active');
+        document.getElementById(`${targetTable}-table`).classList.add('active');
+    });
+});

@@ -1,0 +1,32 @@
+# Python
+*.py
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+
+# Temporary files
+business model
+market
+prompt
+team
+
+# Large files
+*.pdf
+
+# Node modules (if needed in future)
+node_modules/
+package-lock.json

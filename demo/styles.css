@@ -722,55 +722,360 @@ section {
     line-height: 1.8;
     color: var(--text-color);
     max-width: 900px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 4rem;
 }
 
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+/* Research Pipeline Styles */
+.research-pipeline {
     margin-bottom: 4rem;
 }
 
-.research-item {
+.research-phase {
+    background-color: white;
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-phase:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15);
+}
+
+.phase-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid var(--border-color);
+}
+
+.phase-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.phase-title-container {
+    flex: 1;
+}
+
+.phase-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.phase-subtitle {
+    font-size: 1.125rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin: 0;
+}
+
+.phase-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.phase-content-full {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.phase-description h4 {
+    font-size: 1.375rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.phase-description > p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.key-findings {
+    background-color: var(--light-color);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.finding-item {
+    padding: 0.875rem 0;
+    line-height: 1.7;
+    color: var(--text-color);
+    font-size: 0.9375rem;
+}
+
+.finding-item:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.finding-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.phase-visuals {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.visual-item {
     background-color: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
-.research-item:hover {
-    transform: translateY(-5px);
+.visual-item:hover {
+    transform: scale(1.02);
     box-shadow: var(--shadow-lg);
 }
 
-.research-item img {
+.visual-item img {
     width: 100%;
-    height: 250px;
+    height: auto;
+    max-height: 350px;
     object-fit: contain;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: white;
+    display: block;
 }
 
-.research-paper {
-    background-color: white;
-    padding: 3rem;
+.visual-item.large img {
+    max-height: 500px;
+}
+
+.phase-connector {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin: 2rem 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Research Summary */
+.research-summary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 4rem 3rem;
+    border-radius: 16px;
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.research-summary h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.summary-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
     border-radius: 12px;
     text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.summary-item:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+}
+
+.summary-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.summary-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.summary-item p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Interactive Table Styles */
+.interactive-table-section {
+    background-color: var(--light-color);
+    padding: 2.5rem;
+    border-radius: 12px;
     box-shadow: var(--shadow);
 }
 
-.research-paper h3 {
-    font-size: 1.75rem;
+.interactive-table-section h4 {
+    font-size: 1.5rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.research-paper p {
-    font-size: 1.125rem;
-    color: var(--text-color);
+.table-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 2rem;
+}
+
+.table-tab-btn {
+    padding: 12px 32px;
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.table-tab-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.table-tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.data-table-container {
+    display: none;
+    animation: fadeIn 0.4s ease-in;
+    overflow-x: auto;
+}
+
+.data-table-container.active {
+    display: block;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.data-table thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.data-table thead th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.data-table tbody td {
+    padding: 1rem 1.5rem;
+    color: var(--text-color);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.data-table tbody td strong {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.priority {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.priority.high {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.priority.medium {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.priority.low {
+    background-color: #dbeafe;
+    color: #2563eb;
+}
+
+.phase-visuals-centered {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 /* Footer */
@@ -862,8 +1167,46 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .research-grid {
+    .phase-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .phase-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .phase-number {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+
+    .phase-title {
+        font-size: 1.5rem;
+    }
+
+    .phase-subtitle {
+        font-size: 1rem;
+    }
+
+    .summary-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .interactive-table-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .data-table {
+        font-size: 0.875rem;
+    }
+
+    .data-table thead th,
+    .data-table tbody td {
+        padding: 0.875rem 1rem;
     }
 
     .footer-content {
@@ -903,8 +1246,100 @@ section {
         font-size: 2rem;
     }
 
-    .research-grid {
+    .research-phase {
+        padding: 2rem 1.5rem;
+    }
+
+    .phase-header {
+        gap: 1rem;
+    }
+
+    .phase-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .phase-title {
+        font-size: 1.25rem;
+    }
+
+    .phase-subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .phase-description h4 {
+        font-size: 1.125rem;
+    }
+
+    .phase-description > p {
+        font-size: 1rem;
+    }
+
+    .visual-item img {
+        max-height: 250px;
+        padding: 1rem;
+    }
+
+    .visual-item.large img {
+        max-height: 320px;
+        padding: 1rem;
+    }
+
+    .phase-connector {
+        font-size: 2rem;
+        margin: 1.5rem 0;
+    }
+
+    .research-summary {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .research-summary h3 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .summary-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .summary-item {
+        padding: 1.5rem;
+    }
+
+    .summary-icon {
+        font-size: 2.5rem;
+    }
+
+    .interactive-table-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .interactive-table-section h4 {
+        font-size: 1.25rem;
+    }
+
+    .table-tabs {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .table-tab-btn {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.9375rem;
+    }
+
+    .data-table {
+        font-size: 0.8125rem;
+    }
+
+    .data-table thead th,
+    .data-table tbody td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8125rem;
     }
 
     .nav-menu {
@@ -1262,5 +1697,295 @@ section {
 
     .tab-button {
         width: 100%;
+    }
+}
+
+/* ========== Pricing Calculator Styles ========== */
+.pricing-calculator {
+    margin-top: 2rem;
+}
+
+.service-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.service-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.service-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.service-card {
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    border: 3px solid var(--border-color);
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-option input[type="radio"]:checked + .service-card {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.05));
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+}
+
+.service-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.service-card h4 {
+    font-size: 1.25rem;
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 0.9375rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.price-range {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-top: auto;
+}
+
+/* Pricing Details Section */
+.pricing-details {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    min-height: 350px;
+}
+
+.pricing-section {
+    display: none;
+}
+
+.pricing-section.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in;
+}
+
+.pricing-section h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Pricing Input Styles */
+.pricing-input {
+    margin-bottom: 2rem;
+}
+
+.pricing-input label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+}
+
+.pricing-input input[type="range"] {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.pricing-input input[type="range"]:hover {
+    opacity: 1;
+}
+
+.pricing-input input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--primary-color);
+}
+
+.pricing-input input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--primary-color);
+}
+
+#fleet-size-value {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: var(--light-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.pricing-input select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: white;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.pricing-input select:hover {
+    border-color: var(--accent-color);
+}
+
+.pricing-input select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.pricing-input input[type="number"] {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: white;
+    color: var(--dark-color);
+    transition: border-color 0.3s ease;
+}
+
+.pricing-input input[type="number"]:hover {
+    border-color: var(--accent-color);
+}
+
+.pricing-input input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+/* Pricing Result Display */
+.pricing-result {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 2rem;
+    color: white;
+}
+
+.result-label {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    opacity: 0.95;
+}
+
+.result-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-note {
+    font-size: 0.9375rem;
+    opacity: 0.85;
+}
+
+/* Cost Breakdown for API Pricing */
+.cost-breakdown {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.cost-breakdown > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.cost-breakdown .total-cost {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.cost-breakdown span {
+    font-weight: 600;
+}
+
+/* Responsive Pricing Calculator */
+@media (max-width: 968px) {
+    .service-selector {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .pricing-details {
+        padding: 1.5rem;
+    }
+
+    .result-price {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing-calculator h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .pricing-section h4 {
+        font-size: 1.25rem;
+    }
+
+    .result-price {
+        font-size: 1.75rem;
     }
 }
