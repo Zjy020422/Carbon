@@ -20,11 +20,16 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Add parent directory
-sys.path.append(str(Path(__file__).parent.parent))
-
-from yige_code.src.emission.emission_calculator import EmissionCalculator, EmissionReportGenerator
-from yige_code.src.emission.carbon_trading import CarbonTradingCalculator, CarbonTradingReportGenerator
+# Import emission modules
+try:
+    # For Railway deployment (emission/ in web directory)
+    from emission.emission_calculator import EmissionCalculator, EmissionReportGenerator
+    from emission.carbon_trading import CarbonTradingCalculator, CarbonTradingReportGenerator
+except ImportError:
+    # For local development (yige_code in parent directory)
+    sys.path.append(str(Path(__file__).parent.parent))
+    from yige_code.src.emission.emission_calculator import EmissionCalculator, EmissionReportGenerator
+    from yige_code.src.emission.carbon_trading import CarbonTradingCalculator, CarbonTradingReportGenerator
 
 # Flask app
 app = Flask(__name__)
