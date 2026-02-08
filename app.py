@@ -259,6 +259,7 @@ def home():
     with open('index.html', 'r', encoding='utf-8') as f:
         return f.read()
 
+@app.route('/product')
 @app.route('/product.html')
 def product():
     with open('product.html', 'r', encoding='utf-8') as f:
