@@ -246,15 +246,13 @@ def product():
     with open('product.html', 'r', encoding='utf-8') as f:
         return f.read()
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
+
 @app.route('/api/health')
 def health():
     return jsonify({'status': 'ok', 'device': str(device)})
-
-@app.route('/<path:path>')
-def static_files(path):
-    if os.path.exists(path):
-        return send_file(path)
-    return '', 404
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze():
@@ -387,11 +385,18 @@ def download(sid):
             z.write(f, f.name)
     return send_file(zp, as_attachment=True, download_name=f'results_{sid}.zip')
 
+@app.route('/<path:path>')
+def static_files(path):
+    if os.path.exists(path):
+        return send_file(path)
+    return '', 404
+
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*60)
     print("  TrailSyncPioneers Platform")
     print("="*60)
-    print(f"\n  Homepage: http://localhost:5000/")
-    print(f"  Product:  http://localhost:5000/product.html")
+    print(f"\n  Homepage: http://localhost:{port}/")
+    print(f"  Product:  http://localhost:{port}/product.html")
     print("\n" + "="*60 + "\n")
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=False)
