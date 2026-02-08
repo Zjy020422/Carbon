@@ -38,7 +38,11 @@ CORS(app)
 # Folders
 UPLOAD_FOLDER = Path('backend/uploads')
 RESULTS_FOLDER = Path('backend/results')
-MODEL_PATH = Path('../yige_code/model/model_checkpoint_e39.pt')
+MODEL_PATH = Path('model/model_checkpoint_e39.pt')
+
+# Try alternative model path for local development
+if not MODEL_PATH.exists():
+    MODEL_PATH = Path('../yige_code/model/model_checkpoint_e39.pt')
 
 UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
 RESULTS_FOLDER.mkdir(parents=True, exist_ok=True)
@@ -114,13 +118,21 @@ class UNet(nn.Module):
         x = self.up4(x, x1)
         return self.outc(x)
 
-# Load model
+# Model lazy loading
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = UNet(in_channels=24, out_channels=1, base_classes=32)
-checkpoint = torch.load(MODEL_PATH, map_location=device)
-model.load_state_dict(checkpoint)
-model.to(device)
-model.eval()
+model = None
+
+def load_model():
+    global model
+    if model is None:
+        print(f"Loading model from {MODEL_PATH}...")
+        model = UNet(in_channels=24, out_channels=1, base_classes=32)
+        checkpoint = torch.load(MODEL_PATH, map_location=device)
+        model.load_state_dict(checkpoint)
+        model.to(device)
+        model.eval()
+        print("Model loaded successfully!")
+    return model
 emission_calc = EmissionCalculator()
 
 print(f"Model loaded on {device}")
@@ -141,9 +153,10 @@ def process_data(b11, b14, b15):
     return torch.tensor(fc).float().permute(2, 0, 1), fc
 
 def detect(img, thresh=0.5):
+    m = load_model()  # Load model on first use
     with torch.no_grad():
         img = img.unsqueeze(0).to(device) if img.dim() == 3 else img.to(device)
-        out = model(img)
+        out = m(img)
         prob = torch.sigmoid(out).cpu().numpy()[0, 0]
         binary = (prob > thresh).astype(np.uint8)
     return prob, binary
