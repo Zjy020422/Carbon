@@ -239,6 +239,109 @@ section {
     text-align: center;
 }
 
+/* Video Introduction Section */
+.video-intro {
+    background-color: #ffffff;
+}
+
+.video-subtitle {
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 600px;
+}
+
+.video-description {
+    background-color: var(--light-color);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.video-description h3 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.video-highlights {
+    list-style: none;
+    padding-left: 0;
+}
+
+.video-highlights li {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.video-highlights li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.video-highlights li:first-child {
+    padding-top: 0;
+}
+
+.highlight-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.video-highlights li div {
+    flex: 1;
+}
+
+.video-highlights li strong {
+    display: block;
+    font-size: 1.125rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.video-highlights li p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+}
+
 /* About Section */
 .about {
     background-color: var(--light-color);
@@ -1155,6 +1258,15 @@ section {
         font-size: 1.125rem;
     }
 
+    .video-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .video-wrapper video {
+        max-height: 450px;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -1244,6 +1356,38 @@ section {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .video-subtitle {
+        font-size: 1rem;
+    }
+
+    .video-wrapper video {
+        max-height: 300px;
+    }
+
+    .video-description {
+        padding: 1.5rem;
+    }
+
+    .video-description h3 {
+        font-size: 1.5rem;
+    }
+
+    .video-highlights li {
+        padding: 1rem 0;
+    }
+
+    .highlight-icon {
+        font-size: 1.5rem;
+    }
+
+    .video-highlights li strong {
+        font-size: 1rem;
+    }
+
+    .video-highlights li p {
+        font-size: 0.875rem;
     }
 
     .research-phase {

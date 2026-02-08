@@ -1,5 +1,4 @@
-# Python
-*.py
+# Python cache
 *.pyc
 __pycache__/
 *.pyo
@@ -30,3 +29,24 @@ team
 # Node modules (if needed in future)
 node_modules/
 package-lock.json
+
+# Logs
+*.log
+server*.log
+debug.log
+
+# Backend data
+backend/uploads/*
+backend/results/*
+!backend/uploads/.gitkeep
+!backend/results/.gitkeep
+
+# Environment
+.env
+venv/
+env/
+
+# Demo and test files
+demo/
+log/
+test_api_debug.py

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrail Detection Platform - TrailSyncPioneers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product.css">
+    <!-- Chart.js from domestic CDN for better accessibility in China -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" alt="TrailSyncPioneers Logo" class="logo">
+                    <span class="company-name">TrailSyncPioneers</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#business">Business</a></li>
+                    <li><a href="product.html" class="active">Platform</a></li>
+                    <li><a href="index.html#team">Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <h1 class="product-title">AI-Powered Contrail Detection Platform</h1>
+            <p class="product-subtitle">Upload satellite data, detect contrails, analyze emissions, and generate comprehensive reports</p>
+        </div>
+    </section>
+
+    <!-- Main Product Interface -->
+    <section class="product-interface">
+        <div class="container">
+            <!-- Step Indicator -->
+            <div class="steps-indicator">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Upload Data</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Configure</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Processing</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Results</div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section section-panel active" id="step1">
+                <h2>Step 1: Upload Satellite Data</h2>
+                <p class="section-description">Upload three GOES-16 satellite band files (.npy format)</p>
+
+                <div class="upload-grid">
+                    <!-- Band 11 Upload -->
+                    <div class="upload-card">
+                        <div class="upload-icon">📡</div>
+                        <h3>Band 11 (8.4 μm)</h3>
+                        <p>Cloud-top phase infrared</p>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="band11" accept=".npy" class="file-input">
+                            <label for="band11" class="file-label">
+                                <span class="upload-text">Choose file</span>
+                            </label>
+                            <div class="file-status" id="status-band11">No file selected</div>
+                        </div>
+                    </div>
+
+                    <!-- Band 14 Upload -->
+                    <div class="upload-card">
+                        <div class="upload-icon">📡</div>
+                        <h3>Band 14 (11.2 μm)</h3>
+                        <p>Longwave infrared</p>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="band14" accept=".npy" class="file-input">
+                            <label for="band14" class="file-label">
+                                <span class="upload-text">Choose file</span>
+                            </label>
+                            <div class="file-status" id="status-band14">No file selected</div>
+                        </div>
+                    </div>
+
+                    <!-- Band 15 Upload -->
+                    <div class="upload-card">
+                        <div class="upload-icon">📡</div>
+                        <h3>Band 15 (12.3 μm)</h3>
+                        <p>Dirty longwave window</p>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="band15" accept=".npy" class="file-input">
+                            <label for="band15" class="file-label">
+                                <span class="upload-text">Choose file</span>
+                            </label>
+                            <div class="file-status" id="status-band15">No file selected</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-info">
+                    <h4>📋 Data Requirements:</h4>
+                    <ul>
+                        <li>File format: NumPy array (.npy)</li>
+                        <li>Dimensions: 256 × 256 × 8 (height × width × time steps)</li>
+                        <li>All three bands required for analysis</li>
+                        <li>Maximum file size: 50MB per file</li>
+                    </ul>
+                </div>
+
+                <button class="btn btn-primary btn-large" onclick="goToStep(2)" id="upload-next-btn" disabled>
+                    Next: Configure Parameters →
+                </button>
+            </div>
+
+            <!-- Configuration Section -->
+            <div class="config-section section-panel" id="step2">
+                <h2>Step 2: Configure Detection Parameters</h2>
+                <p class="section-description">Specify time and location information for accurate analysis</p>
+
+                <div class="config-form">
+                    <div class="form-grid">
+                        <!-- Time Configuration -->
+                        <div class="form-group">
+                            <label for="detection-time">🕐 Detection Time (UTC)</label>
+                            <input type="datetime-local" id="detection-time" class="form-input" required>
+                            <small>Time when satellite image was captured</small>
+                        </div>
+
+                        <!-- Flight Information (Optional) -->
+                        <div class="form-group">
+                            <label for="flight-callsign">✈️ Flight Callsign (Optional)</label>
+                            <input type="text" id="flight-callsign" class="form-input" placeholder="e.g., UAL123">
+                            <small>Aircraft callsign for emission analysis</small>
+                        </div>
+
+                        <!-- Geographic Bounds -->
+                        <div class="form-group full-width">
+                            <h3>📍 Geographic Bounds</h3>
+                            <div class="coord-grid">
+                                <div class="coord-input">
+                                    <label>Min Latitude (°)</label>
+                                    <input type="number" id="min-lat" class="form-input" step="0.001" placeholder="e.g., 30.0" required>
+                                </div>
+                                <div class="coord-input">
+                                    <label>Max Latitude (°)</label>
+                                    <input type="number" id="max-lat" class="form-input" step="0.001" placeholder="e.g., 45.0" required>
+                                </div>
+                                <div class="coord-input">
+                                    <label>Min Longitude (°)</label>
+                                    <input type="number" id="min-lon" class="form-input" step="0.001" placeholder="e.g., -120.0" required>
+                                </div>
+                                <div class="coord-input">
+                                    <label>Max Longitude (°)</label>
+                                    <input type="number" id="max-lon" class="form-input" step="0.001" placeholder="e.g., -100.0" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detection Settings -->
+                        <div class="form-group">
+                            <label for="threshold">🎯 Detection Threshold</label>
+                            <input type="range" id="threshold" class="form-range" min="0.3" max="0.7" step="0.05" value="0.5">
+                            <output id="threshold-value">0.5</output>
+                            <small>Higher values = fewer false positives</small>
+                        </div>
+
+                        <!-- Carbon Market -->
+                        <div class="form-group">
+                            <label for="carbon-market">💰 Carbon Market</label>
+                            <select id="carbon-market" class="form-select">
+                                <option value="EU_ETS">EU ETS ($95/tCO₂)</option>
+                                <option value="CORSIA">CORSIA ($20/tCO₂)</option>
+                                <option value="CHINA">China ETS ($11/tCO₂)</option>
+                                <option value="UK_ETS">UK ETS ($55/tCO₂)</option>
+                                <option value="CALIFORNIA">California ($32/tCO₂)</option>
+                            </select>
+                            <small>Select carbon pricing market for cost analysis</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToStep(1)">← Back</button>
+                    <button class="btn btn-primary btn-large" onclick="startAnalysis()">
+                        Start Analysis 🚀
+                    </button>
+                </div>
+            </div>
+
+            <!-- Processing Section -->
+            <div class="processing-section section-panel" id="step3">
+                <h2>Step 3: Processing Your Data</h2>
+                <p class="section-description">AI analysis in progress...</p>
+
+                <div class="processing-container">
+                    <div class="processing-animation">
+                        <div class="spinner"></div>
+                    </div>
+
+                    <div class="processing-steps">
+                        <div class="processing-step" id="proc-upload">
+                            <div class="proc-icon">⏳</div>
+                            <div class="proc-content">
+                                <h4>Uploading files...</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-upload"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="processing-step" id="proc-detect">
+                            <div class="proc-icon">⏳</div>
+                            <div class="proc-content">
+                                <h4>Detecting contrails with AI...</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-detect"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="processing-step" id="proc-emission">
+                            <div class="proc-icon">⏳</div>
+                            <div class="proc-content">
+                                <h4>Calculating emissions...</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-emission"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="processing-step" id="proc-carbon">
+                            <div class="proc-icon">⏳</div>
+                            <div class="proc-content">
+                                <h4>Computing carbon costs...</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-carbon"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="processing-step" id="proc-report">
+                            <div class="proc-icon">⏳</div>
+                            <div class="proc-content">
+                                <h4>Generating report...</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-report"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="processing-logs" id="processing-logs">
+                        <h4>Analysis Log:</h4>
+                        <div class="log-content" id="log-content">
+                            Initializing...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section section-panel" id="step4">
+                <h2>Step 4: Analysis Results</h2>
+                <p class="section-description">Complete contrail detection and emission analysis report</p>
+
+                <!-- Summary Cards -->
+                <div class="results-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon">☁️</div>
+                        <div class="summary-content">
+                            <h3 id="result-coverage">0%</h3>
+                            <p>Contrail Coverage</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">🔥</div>
+                        <div class="summary-content">
+                            <h3 id="result-co2">0 kg</h3>
+                            <p>Total CO₂ Equivalent</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">💰</div>
+                        <div class="summary-content">
+                            <h3 id="result-cost">$0</h3>
+                            <p>Carbon Trading Cost</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">📊</div>
+                        <div class="summary-content">
+                            <h3 id="result-area">0 km²</h3>
+                            <p>Contrail Area</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualization Tabs -->
+                <div class="results-tabs">
+                    <button class="tab-btn active" onclick="showTab('detection')">Detection Results</button>
+                    <button class="tab-btn" onclick="showTab('emission')">Emission Analysis</button>
+                    <button class="tab-btn" onclick="showTab('strategy')">Trading Strategy</button>
+                    <button class="tab-btn" onclick="showTab('report')">Detailed Report</button>
+                </div>
+
+                <!-- Detection Results Tab -->
+                <div class="tab-content active" id="tab-detection">
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h3>Input Satellite Image</h3>
+                            <img id="img-input" src="" alt="Input Image" class="result-image" onclick="openImageModal(this.src)">
+                        </div>
+                        <div class="result-card">
+                            <h3>Probability Mask</h3>
+                            <img id="img-probability" src="" alt="Probability Mask" class="result-image" onclick="openImageModal(this.src)">
+                        </div>
+                        <div class="result-card">
+                            <h3>Binary Detection</h3>
+                            <img id="img-binary" src="" alt="Binary Mask" class="result-image" onclick="openImageModal(this.src)">
+                        </div>
+                        <div class="result-card">
+                            <h3>Contrail-Flight Fusion</h3>
+                            <img id="img-fusion" src="" alt="Contrail and Flight Track Fusion" class="result-image" onclick="openImageModal(this.src)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emission Analysis Tab -->
+                <div class="tab-content" id="tab-emission">
+                    <div class="emission-details">
+                        <div class="emission-card">
+                            <h3>Flight Information</h3>
+                            <table class="data-table">
+                                <tr>
+                                    <td>Callsign:</td>
+                                    <td id="data-callsign">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Aircraft Type:</td>
+                                    <td id="data-aircraft">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Flight Distance:</td>
+                                    <td id="data-distance">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Detection Time:</td>
+                                    <td id="data-time">-</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="emission-card">
+                            <h3>Emission Breakdown</h3>
+                            <table class="data-table">
+                                <tr>
+                                    <td>Fuel Consumption:</td>
+                                    <td id="data-fuel">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Direct CO₂:</td>
+                                    <td id="data-co2-direct">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Contrail CO₂eq:</td>
+                                    <td id="data-co2-contrail">-</td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td><strong>Total CO₂eq:</strong></td>
+                                    <td id="data-co2-total">-</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="emission-card">
+                            <h3>Carbon Trading Analysis</h3>
+                            <table class="data-table">
+                                <tr>
+                                    <td>Carbon Market:</td>
+                                    <td id="data-market">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbon Price:</td>
+                                    <td id="data-price">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Cost per km:</td>
+                                    <td id="data-cost-km">-</td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td><strong>Total Cost:</strong></td>
+                                    <td id="data-cost-total">-</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Charts -->
+                    <div class="charts-section">
+                        <h2>Interactive Data Visualization</h2>
+                        <div class="charts-grid">
+                            <div class="chart-card">
+                                <h3>Emission Breakdown</h3>
+                                <div class="chart-container">
+                                    <canvas id="emissionChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Carbon Cost Analysis</h3>
+                                <div class="chart-container">
+                                    <canvas id="carbonChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Contrail Coverage</h3>
+                                <div class="chart-container">
+                                    <canvas id="contrailChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Environmental Impact</h3>
+                                <div class="chart-container">
+                                    <canvas id="impactChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carbon Trading Strategy Tab -->
+                <div class="tab-content" id="tab-strategy">
+                    <h2>🌍 Carbon Trading Strategy Simulator</h2>
+                    <p class="section-description">Compare different markets and flight altitudes to optimize carbon costs</p>
+
+                    <!-- Interactive Controls -->
+                    <div class="strategy-controls">
+                        <div class="control-group">
+                            <label for="strategy-market">Select Carbon Market:</label>
+                            <select id="strategy-market" onchange="updateStrategyChart()">
+                                <option value="EU_ETS">EU ETS (European Union)</option>
+                                <option value="CORSIA">CORSIA (International)</option>
+                                <option value="CHINA">China ETS</option>
+                                <option value="UK_ETS">UK ETS</option>
+                                <option value="CALIFORNIA">California Cap-and-Trade</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="strategy-altitude">Flight Altitude: <span id="altitude-value">10000</span> m</label>
+                            <input type="range" id="strategy-altitude" min="8000" max="12000" step="500" value="10000" oninput="updateAltitudeDisplay(this.value); updateStrategyChart()">
+                        </div>
+                    </div>
+
+                    <!-- Strategy Charts -->
+                    <div class="strategy-section">
+                        <div class="strategy-chart-container">
+                            <div class="chart-card">
+                                <h3>Cost vs Altitude (Selected Market)</h3>
+                                <div class="chart-container">
+                                    <canvas id="altitudeCostChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Market Comparison (Selected Altitude)</h3>
+                                <div class="chart-container">
+                                    <canvas id="marketComparisonChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="strategy-chart-container">
+                            <div class="chart-card">
+                                <h3>CO₂ vs Altitude</h3>
+                                <div class="chart-container">
+                                    <canvas id="co2AltitudeChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Optimal Strategy Heatmap</h3>
+                                <div class="chart-container">
+                                    <canvas id="heatmapChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategy Recommendations -->
+                    <div class="strategy-recommendations">
+                        <h3>💡 Optimization Recommendations</h3>
+                        <div id="strategy-recommendations-content">
+                            <p>Adjust parameters above to see recommendations...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Tab -->
+                <div class="tab-content" id="tab-report">
+                    <div class="report-container">
+                        <div class="report-header">
+                            <h3>Complete Analysis Report</h3>
+                            <button class="btn btn-primary" onclick="downloadReport()">📥 Download PDF</button>
+                        </div>
+                        <pre id="report-content" class="report-text">Loading report...</pre>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="results-actions">
+                    <button class="btn btn-secondary" onclick="resetAnalysis()">🔄 New Analysis</button>
+                    <button class="btn btn-primary" onclick="downloadAllResults()">📦 Download All Results</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Notice -->
+    <section class="pricing-notice">
+        <div class="container">
+            <div class="notice-content">
+                <h3>💼 Commercial Subscription Required</h3>
+                <p>This analysis platform is part of our SaaS subscription service. Contact us for pricing and enterprise solutions.</p>
+                <a href="index.html#business" class="btn btn-primary">View Pricing Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TrailSyncPioneers. All rights reserved.</p>
+            <p>Fly Cleaner. Spend Smarter.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" class="modal-content-img">
+    </div>
+
+    <script src="product.js"></script>
+</body>
+</html>

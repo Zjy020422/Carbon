@@ -1,106 +1,83 @@
-# TrailSyncPioneers - Carbon Management Platform
+# TrailSyncPioneers - Contrail Detection & Carbon Trading Platform
 
-## Overview
-
-TrailSyncPioneers is an AI-driven carbon management platform designed for aviation's net-zero future. The platform empowers airlines to monitor, manage, and reduce contrail emissions through cutting-edge AI technology and comprehensive data integration.
+AI-powered aviation emission monitoring and carbon trading analysis platform.
 
 ## Features
 
-- **AI-Powered Contrail Detection**: Custom U-Net deep learning model for precise contrail identification
-- **Multi-Source Data Integration**: Seamless correlation of satellite data, flight tracking, and meteorological information
-- **Climate Impact Quantification**: Advanced radiative forcing analysis and CO2-equivalent emissions calculation
-- **Interactive Pricing Calculator**: Dynamic pricing models for SaaS subscriptions, consulting services, and API access
-- **Comprehensive Research Results**: Detailed visualization of detection results, emission analysis, and market insights
+- 🛩️ Contrail Detection using UNet Deep Learning Model
+- 📊 Real-time Emission Calculations
+- 💰 Carbon Trading Cost Analysis (5 Markets)
+- 📈 Interactive Data Visualization
+- 🎯 Flight-Contrail Fusion Visualization
+- 🌍 Multi-Market Strategy Comparison
 
-## Technology Stack
+## Tech Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **AI/ML**: U-Net Deep Learning Architecture
-- **Data Sources**: GOES-16, Himawari-8 Satellite Imagery, ADS-B Flight Data
-- **Deployment**: Railway (Static Site)
+- **Backend**: Flask, PyTorch
+- **Frontend**: Vanilla JavaScript, Chart.js
+- **ML Model**: UNet (24-channel input for satellite data)
+- **Deployment**: Railway
+
+## Quick Start
+
+### Local Development
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run server
+python app.py
+```
+
+Visit: `http://localhost:5000`
+
+### Railway Deployment
+
+1. Push to GitHub
+2. Connect Railway to your repository
+3. Railway will auto-detect and deploy using:
+   - `runtime.txt` - Python version
+   - `requirements.txt` - Dependencies
+   - `Procfile` - Start command
 
 ## Project Structure
 
 ```
-demo/
-├── index.html              # Main HTML file
-├── styles.css              # Stylesheet
-├── script.js               # JavaScript functionality
-├── images/                 # Logo, backgrounds, team photos
-├── assert/                 # Research result images
-│   └── cropped/           # Cropped analysis charts
-├── README.md              # This file
-└── .gitignore             # Git ignore rules
+web/
+├── app.py                 # Flask backend
+├── index.html            # Homepage
+├── product.html          # Analysis platform
+├── product.js            # Frontend logic
+├── product.css           # Styling
+├── styles.css            # Global styles
+├── script.js             # Homepage scripts
+├── images/               # Static images
+├── backend/
+│   ├── uploads/          # User uploaded data
+│   └── results/          # Analysis results
+├── requirements.txt      # Python dependencies
+├── Procfile             # Railway start command
+└── runtime.txt          # Python version
+
 ```
 
-## Local Development
+## API Endpoints
 
-1. Clone the repository:
-```bash
-git clone https://github.com/Zjy020422/carbon_web.git
-cd carbon_web
-```
+- `GET /` - Homepage
+- `GET /product.html` - Analysis platform
+- `GET /api/health` - Health check
+- `POST /api/analyze` - Run contrail analysis
+- `GET /api/download/<session_id>` - Download results
 
-2. Open `index.html` in your web browser:
-```bash
-# On Windows
-start index.html
+## Environment Variables
 
-# On macOS
-open index.html
-
-# On Linux
-xdg-open index.html
-```
-
-Or use a local development server:
-```bash
-# Python 3
-python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-```
-
-Then visit `http://localhost:8000`
-
-## Deployment
-
-This project is deployed on Railway. To deploy your own instance:
-
-1. Fork this repository
-2. Create a new project on [Railway](https://railway.app)
-3. Connect your GitHub repository
-4. Railway will automatically deploy the static site
-
-## Features Breakdown
-
-### Interactive Pricing Calculator
-- **SaaS Subscription**: Dynamic pricing based on fleet size (50,000-200,000 CNY/year)
-- **Professional Consulting**: Project complexity-based pricing (20,000-50,000 CNY)
-- **API Data Access**: Tiered access with token-based billing (500-5,000 CNY/month)
-
-### Research Results
-1. **AI-Powered Detection**: Model training and validation metrics
-2. **Climate Impact**: Radiative forcing distribution analysis
-3. **Emission Analysis**: CO2 distribution and flight distance correlation
-4. **Economic Impact**: Cost structure breakdown and market analysis
-
-## Team
-
-- **Gladys Liu** - CTO & CEO
-- **Zoe Wang** - CFO
-
-## Contact
-
-For inquiries and partnership opportunities:
-- Email: contact@trailsyncpioneers.com
-- Partnerships: partnerships@trailsyncpioneers.com
+No environment variables required for basic operation.
 
 ## License
 
 © 2025 TrailSyncPioneers. All rights reserved.
 
-## Tagline
+## Contact
 
-**Fly Cleaner. Spend Smarter.**
+For questions or support, please open an issue on GitHub.
